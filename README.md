@@ -23,7 +23,7 @@
     5. Build a unity package and run it
     6. Run Unity editor
 
-Setup Video link: [https://www.bilibili.com/video/av55450233][15] 
+Setup Video link: [https://www.bilibili.com/video/av64460304/][15] 
 
 
  [1]: https://github.com/proepkes/UnityLockstep
