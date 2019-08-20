@@ -73,11 +73,14 @@ public class CAnimation : MonoBehaviour, IView {
             ResetAnim();
         }
 
-        if (isCrossfade) {
-            animComp.CrossFade(CurAnimName);
-        }
-        else {
-            animComp.Play(CurAnimName);
+        var state = animComp[CurAnimName];
+        if (state != null) {
+            if (isCrossfade) {
+                animComp.CrossFade(CurAnimName);
+            }
+            else {
+                animComp.Play(CurAnimName);
+            }
         }
     }
 
@@ -103,7 +106,6 @@ public class CAnimation : MonoBehaviour, IView {
     }
 
     public void DoLateUpdate(LFloat deltaTime){
-        if (animState == null) return;
         animLen = CurAnimInfo.length;
         timer += deltaTime;
         if (timer > animLen) {
@@ -123,6 +125,7 @@ public class CAnimation : MonoBehaviour, IView {
     }
 
     public void Sample(LFloat time){
+        if(animState == null) return;
         if (!Application.isPlaying) {
             animComp.Play();
         }
