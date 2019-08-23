@@ -9,39 +9,9 @@ using UnityEngine;
 using Debug = Lockstep.Logging.Debug;
 
 namespace Lockstep.Logic {
+
     public class CSkill : MonoBehaviour {
-        [Serializable]
-        public class ColliderInfo {
-            public LVector2 pos;
-            public LVector2 size;
-            public LFloat radius;
-            public LFloat deg = new LFloat(180);
-            public LFloat maxY;
 
-            public bool IsCircle => radius > 0;
-        }
-
-        [Serializable]
-        public class SkillPart {
-            public bool _DebugShow;
-            public LFloat startTimer;
-            public ColliderInfo collider;
-            public LVector3 impulseForce;
-            public bool needForce;
-            public bool isResetForce;
-
-            public LFloat interval;
-            public int otherCount;
-            public int damage;
-            public static LFloat AnimFrameScale = new LFloat(true, 1667);
-            [HideInInspector] public LFloat DeadTimer => startTimer + interval * (otherCount + LFloat.half);
-
-            [HideInInspector] public int counter;
-
-            public LFloat NextTriggerTimer(){
-                return startTimer + interval * counter;
-            }
-        }
 
         [HideInInspector] public BaseEntity owner => view?.owner;
 

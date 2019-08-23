@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 namespace Lockstep.Logic {
     public partial class PlayerView : MonoBehaviour, IPlayerView {
+        public SkillBoxConfig skillConfig;
         public Player owner;
         public int currentHealth => owner.currentHealth;
 
@@ -73,7 +74,7 @@ namespace Lockstep.Logic {
             transform.position = Vector3.Lerp(transform.position, pos, 0.3f);
             var deg = owner.transform.deg.ToFloat();
             //deg = Mathf.Lerp(transform.rotation.eulerAngles.y, deg, 0.3f);
-            transform.rotation = Quaternion.Lerp(transform.rotation,Quaternion.Euler(0, deg, 0),0.3f) ;
+            transform.rotation = Quaternion.Euler(0, deg, 0);// Quaternion.Lerp(transform.rotation,Quaternion.Euler(0, deg, 0),0.3f) ;
         }
 
         public void TakeDamage(int amount, LVector3 hitPoint){

@@ -19,7 +19,7 @@ namespace Lockstep.Logic
         Vector3 offset;                     // The initial offset from the target.
 
 
-        void FixedUpdate (){
+        void Update (){
             if (_target == null) {
                 target = GameManager.playerTrans;
             }
