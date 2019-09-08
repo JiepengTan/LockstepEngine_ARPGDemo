@@ -30,6 +30,9 @@
 
 Setup Video link: [https://www.bilibili.com/video/av64460304/][15] 
 
+#### **QQ 群：** 
+- 帧同步技术交流  839944367
+
 
  [1]: https://github.com/proepkes/UnityLockstep
  [2]: https://github.com/RevenantX/LiteNetLib
